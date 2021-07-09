@@ -1,4 +1,4 @@
-package com.appodex.agastya;
+package com.agastya.app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
