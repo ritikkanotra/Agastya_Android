@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -28,12 +30,20 @@ public class LoginActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 1;
     private FirebaseAuth mAuth;
 
+    private LinearLayout ll_login;
+    private ProgressBar pb_login;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         getSupportActionBar().hide();
+
+        ll_login = findViewById(R.id.ll_g_login);
+        pb_login = findViewById(R.id.pb_login);
+
+        pb_login.setVisibility(View.GONE);
 
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -72,6 +82,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void firebaseAuthWithGoogle(String idToken) {
+//        Log.d("rk_debug", "progress");
+        pb_login.setVisibility(View.VISIBLE);
+        ll_login.setVisibility(View.INVISIBLE);
+
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -81,11 +95,17 @@ public class LoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("rk_debug", "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+
+                            pb_login.setVisibility(View.GONE);
+                            ll_login.setVisibility(View.VISIBLE);
+
                             Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             finish();
                         } else {
                             // If sign in fails, display a message to the user.
+                            pb_login.setVisibility(View.GONE);
+                            ll_login.setVisibility(View.VISIBLE);
                             Log.w("rg_debug", "signInWithCredential:failure", task.getException());
 //                            updateUI(null);
                             Toast.makeText(LoginActivity.this, "Try Again", Toast.LENGTH_LONG).show();

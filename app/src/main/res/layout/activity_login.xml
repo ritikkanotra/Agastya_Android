@@ -34,6 +34,7 @@
       android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
+        app:cardCornerRadius="25dp"
         android:onClick="loginGoogle"
         android:clickable="true"
         android:foreground="?android:selectableItemBackground"
@@ -43,7 +44,14 @@
         android:layout_width="match_parent"
         android:layout_height="55dp">
 
+      <ProgressBar
+          android:id="@+id/pb_login"
+          android:layout_gravity="center"
+          android:layout_width="40dp"
+          android:layout_height="40dp"/>
+
       <LinearLayout
+          android:id="@+id/ll_g_login"
           android:layout_gravity="center"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -51,18 +59,18 @@
 
         <ImageView
             android:layout_marginEnd="15dp"
-            android:src="@drawable/g_logo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"/>
+            android:src="@drawable/google_logo"
+            android:layout_width="37dp"
+            android:layout_height="37dp"/>
 
         <TextView
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Login with Google" />
+            android:text="Login with Google"
+            android:textColor="@android:color/background_dark"
+            android:textSize="19sp" />
 
       </LinearLayout>
 
