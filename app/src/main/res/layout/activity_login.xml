@@ -34,6 +34,7 @@
       android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
+        android:onClick="loginGoogle"
         android:clickable="true"
         android:foreground="?android:selectableItemBackground"
         android:layout_gravity="center"

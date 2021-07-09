@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "69729244968",
+    "project_id": "agastya-2021",
+    "storage_bucket": "agastya-2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69729244968:android:7125f8b1a9ec6f086a221d",
+        "android_client_info": {
+          "package_name": "com.agastya.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69729244968-gte9vibkuhqrabpurd746ac0p85kdulp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.agastya.app",
+            "certificate_hash": "39a5f7fb8ef2b41d6db17948ec228d56da7aac49"
+          }
+        },
+        {
+          "client_id": "69729244968-j08q8qjp46u48goq5rognk29islnq68f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoqodBC8PidjFyEifFI-W6uLdA-O8nJV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "69729244968-j08q8qjp46u48goq5rognk29islnq68f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
