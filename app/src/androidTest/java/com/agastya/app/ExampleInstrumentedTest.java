@@ -1,4 +1,4 @@
-package com.appodex.agastya;
+package com.agastya.app;
 
 import android.content.Context;
 
