@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Agastya</string>
-<!--    <string name="default_web_client_id">69729244968-gte9vibkuhqrabpurd746ac0p85kdulp.apps.googleusercontent.com</string>-->
+    <string name="hello_blank_fragment">Blank Fragment</string>
+    <!--    <string name="default_web_client_id">69729244968-gte9vibkuhqrabpurd746ac0p85kdulp.apps.googleusercontent.com</string>-->
 </resources>

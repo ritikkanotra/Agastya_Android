@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VaccineFragment">
+    tools:context="com.agastya.app.VaccineFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

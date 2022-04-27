@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="10"
-    tools:context=".LoginActivity">
+    tools:context="com.agastya.app.LoginActivity">
 
   <ImageView
       android:id="@+id/login_ill"
@@ -18,9 +18,9 @@
 
   <TextView
       android:id="@+id/app_name"
-      android:layout_below="@id/login_ill"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:layout_below="@id/login_ill"
       android:layout_centerHorizontal="true"
       android:fontFamily="@font/comfortaa_bold"
       android:text="@string/app_name"
