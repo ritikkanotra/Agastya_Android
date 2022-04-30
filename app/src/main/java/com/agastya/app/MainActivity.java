@@ -5,11 +5,13 @@ import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private int currentItem;
     private FragmentManager fragmentManager;
+    private TextView headingTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         currentItem = R.id.nav_item_stats;
         fragmentManager = getSupportFragmentManager();
+        headingTextView = findViewById(R.id.tv_heading);
 
         initNavBar();
 
@@ -28,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickNavItem(View view) {
         int item = view.getId();
         if (currentItem != item) {
-            String heading;
+            String heading = "";
             switch (item) {
 
                 case R.id.nav_item_stats:
@@ -36,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
                     fragmentManager.beginTransaction().replace(R.id.fragment_frame, new StatsFragment()).commit();
                     break;
 
-                case R.id.nav_item_info:
+                case R.id.nav_item_news:
+                    heading = "Covid News";
+                    fragmentManager.beginTransaction().replace(R.id.fragment_frame, new NewsFragment()).commit();
                     break;
 
                 case R.id.nav_item_res:
@@ -45,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_item_vaccine:
                     break;
             }
+
+            currentItem = item;
+            headingTextView.setText(heading);
 
         }
 

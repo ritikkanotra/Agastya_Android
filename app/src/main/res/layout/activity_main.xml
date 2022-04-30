@@ -40,7 +40,7 @@
             android:src="@drawable/stats_outline"/>
 
         <ImageView
-            android:id="@+id/nav_item_info"
+            android:id="@+id/nav_item_news"
             android:onClick="onClickNavItem"
             android:layout_width="0dp"
             android:layout_weight="1"
