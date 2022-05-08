@@ -49,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
 
                 case R.id.nav_item_vaccine:
                     break;
+
+                case R.id.nav_item_report:
+                    heading = "Report";
+                    fragmentManager.beginTransaction().replace(R.id.fragment_frame, new ReportFragment()).commit();
+                    break;
             }
 
             currentItem = item;

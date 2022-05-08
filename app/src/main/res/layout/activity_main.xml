@@ -71,6 +71,8 @@
     </LinearLayout>
 
     <com.google.android.material.card.MaterialCardView
+        android:onClick="onClickNavItem"
+        android:id="@+id/nav_item_report"
         app:cardElevation="3dp"
         android:layout_width="60dp"
         android:layout_height="60dp"
