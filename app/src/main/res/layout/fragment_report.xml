@@ -3,17 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewsFragment">
+    tools:context=".ReportFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_news"
+    <FrameLayout
+        android:id="@+id/report_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
-    <ProgressBar
-        android:id="@+id/pb_news"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
 </FrameLayout>

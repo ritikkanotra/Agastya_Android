@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.agastya.app.model.News;
@@ -32,6 +33,7 @@ public class NewsFragment extends Fragment {
     private RecyclerView newsRecyclerView;
     private RequestQueue requestQueue;
     private NewsAdapter newsAdapter;
+    private ProgressBar progressBar;
 
     public NewsFragment() {
         // Required empty public constructor
@@ -47,6 +49,7 @@ public class NewsFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_news, container, false);
 
         newsRecyclerView = view.findViewById(R.id.rv_news);
+        progressBar = view.findViewById(R.id.pb_news);
 
         List<News> newsList = getNewsList();
 
@@ -58,6 +61,10 @@ public class NewsFragment extends Fragment {
     }
 
     private List<News> getNewsList() {
+
+        progressBar.setVisibility(View.VISIBLE);
+
+
         String url = "https://saurav.tech/NewsAPI/top-headlines/category/health/in.json";
         List<News> newsList = new ArrayList<>();
 
@@ -76,6 +83,7 @@ public class NewsFragment extends Fragment {
                                 newsObject.getString("title")));
                     }
                     newsAdapter.notifyDataSetChanged();
+                    progressBar.setVisibility(View.GONE);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -83,6 +91,7 @@ public class NewsFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                progressBar.setVisibility(View.GONE);
                 Toast.makeText(getActivity(), "Error getting news", Toast.LENGTH_LONG).show();
             }
         });

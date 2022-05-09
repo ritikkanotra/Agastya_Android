@@ -16,6 +16,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <ImageView
+        android:id="@+id/btn_logout"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="16dp"
+        android:background="?actionBarItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/logout_variant" />
+
     <FrameLayout
         android:id="@+id/fragment_frame"
         android:layout_width="match_parent"
@@ -32,6 +44,9 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?actionBarItemBackground"
             android:id="@+id/nav_item_stats"
             android:onClick="onClickNavItem"
             android:layout_width="0dp"
@@ -40,6 +55,9 @@
             android:src="@drawable/stats_outline"/>
 
         <ImageView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?actionBarItemBackground"
             android:id="@+id/nav_item_news"
             android:onClick="onClickNavItem"
             android:layout_width="0dp"
@@ -53,6 +71,9 @@
             android:layout_height="wrap_content"/>
 
         <ImageView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?actionBarItemBackground"
             android:id="@+id/nav_item_res"
             android:onClick="onClickNavItem"
             android:layout_width="0dp"
@@ -61,6 +82,9 @@
             android:src="@drawable/phone_outline"/>
 
         <ImageView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?actionBarItemBackground"
             android:id="@+id/nav_item_vaccine"
             android:onClick="onClickNavItem"
             android:layout_width="0dp"
@@ -71,6 +95,8 @@
     </LinearLayout>
 
     <com.google.android.material.card.MaterialCardView
+        android:onClick="onClickNavItem"
+        android:id="@+id/nav_item_report"
         app:cardElevation="3dp"
         android:layout_width="60dp"
         android:layout_height="60dp"
