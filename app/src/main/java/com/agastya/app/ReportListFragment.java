@@ -69,7 +69,7 @@ public class ReportListFragment extends Fragment {
 
         List<Report> reportList = new ArrayList<>();
 
-        String url = "http://10.0.2.2/temp/get_reports.php";
+        String url = "https://ritikkanotra.000webhostapp.com/agastya/get_reports.php";
         StringRequest reportRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

@@ -44,6 +44,9 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?actionBarItemBackground"
             android:id="@+id/nav_item_stats"
             android:onClick="onClickNavItem"
             android:layout_width="0dp"
@@ -52,6 +55,9 @@
             android:src="@drawable/stats_outline"/>
 
         <ImageView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?actionBarItemBackground"
             android:id="@+id/nav_item_news"
             android:onClick="onClickNavItem"
             android:layout_width="0dp"
@@ -65,6 +71,9 @@
             android:layout_height="wrap_content"/>
 
         <ImageView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?actionBarItemBackground"
             android:id="@+id/nav_item_res"
             android:onClick="onClickNavItem"
             android:layout_width="0dp"
@@ -73,6 +82,9 @@
             android:src="@drawable/phone_outline"/>
 
         <ImageView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?actionBarItemBackground"
             android:id="@+id/nav_item_vaccine"
             android:onClick="onClickNavItem"
             android:layout_width="0dp"

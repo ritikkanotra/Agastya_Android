@@ -77,7 +77,7 @@ public class LoginFragment extends Fragment {
     public void makeLoginRequest(String uname, String pwd) {
         loginButton.setEnabled(false);
 
-        String loginUrl = "http://10.0.2.2/temp/login.php";
+        String loginUrl = "https://ritikkanotra.000webhostapp.com/agastya/login.php";
 
         StringRequest loginRequest = new StringRequest(Request.Method.POST, loginUrl, new Response.Listener<String>() {
             @Override

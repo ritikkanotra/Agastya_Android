@@ -8,6 +8,7 @@ import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -38,6 +39,7 @@ public class ReportsAdapter extends RecyclerView.Adapter<ReportsAdapter.ViewHold
         public TextView reportIdTextView;
         public TextView dateTimeTextView;
         private RelativeLayout downloadLayout;
+        private FrameLayout statusStrip;
 
         public ViewHolder(View itemView) {
 
@@ -45,6 +47,7 @@ public class ReportsAdapter extends RecyclerView.Adapter<ReportsAdapter.ViewHold
             reportIdTextView = itemView.findViewById(R.id.tv_report_id);
             dateTimeTextView = itemView.findViewById(R.id.tv_date_time);
             downloadLayout = itemView.findViewById(R.id.layout_download_report);
+            statusStrip = itemView.findViewById(R.id.layout_strip);
 
             context = itemView.getContext();
 
@@ -89,6 +92,16 @@ public class ReportsAdapter extends RecyclerView.Adapter<ReportsAdapter.ViewHold
                 }
             }
         });
+
+        if (report.getResult().equals("1")) {
+            holder.statusStrip.setBackgroundColor(context.getResources().getColor(android.R.color.holo_red_dark));
+        }
+        else if (report.getResult().equals("0")) {
+            holder.statusStrip.setBackgroundColor(context.getResources().getColor(android.R.color.holo_green_dark));
+        }
+        else {
+            holder.statusStrip.setBackgroundColor(context.getResources().getColor(android.R.color.darker_gray));
+        }
 
 
     }
