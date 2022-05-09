@@ -75,6 +75,8 @@ public class LoginFragment extends Fragment {
     }
 
     public void makeLoginRequest(String uname, String pwd) {
+        loginButton.setEnabled(false);
+
         String loginUrl = "http://10.0.2.2/temp/login.php";
 
         StringRequest loginRequest = new StringRequest(Request.Method.POST, loginUrl, new Response.Listener<String>() {
@@ -87,9 +89,11 @@ public class LoginFragment extends Fragment {
                     JSONObject jsonObject = new JSONObject(response);
                     String status = jsonObject.getString("status");
                     if (status.equals("0")) {
+                        loginButton.setEnabled(true);
                         Toast.makeText(getContext(), "Patient not found", Toast.LENGTH_SHORT).show();
                     }
                     else if (status.equals("-1")) {
+                        loginButton.setEnabled(true);
                         Toast.makeText(getContext(), "Wrong Password", Toast.LENGTH_SHORT).show();
                     }
                     else if (status.equals("1")) {
@@ -104,6 +108,7 @@ public class LoginFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                loginButton.setEnabled(true);
                 Log.d("rk_debug", "Request Failed: " + error);
             }
         }) {
