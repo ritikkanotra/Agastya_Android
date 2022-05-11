@@ -93,8 +93,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
                 case R.id.nav_item_res:
-                    heading = "Resources";
+                    heading = "Helpline";
                     logoutBtn.setVisibility(View.GONE);
+                    fragmentManager.beginTransaction().replace(R.id.fragment_frame, new PhoneFragment()).commit();
                     break;
 
                 case R.id.nav_item_vaccine:
