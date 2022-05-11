@@ -100,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
                 case R.id.nav_item_vaccine:
                     heading = "Vaccine";
+                    fragmentManager.beginTransaction().replace(R.id.fragment_frame, new VaccineFragment()).commit();
                     logoutBtn.setVisibility(View.GONE);
                     break;
 
