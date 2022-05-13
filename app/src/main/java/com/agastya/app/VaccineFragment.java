@@ -1,5 +1,7 @@
 package com.agastya.app;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,9 +12,11 @@ import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
+import com.google.android.material.button.MaterialButton;
+
 public class VaccineFragment extends Fragment {
 
-    private WebView cowinWebView;
+    private MaterialButton btnVaccine;
 
     public VaccineFragment() {
         // Required empty public constructor
@@ -24,26 +28,19 @@ public class VaccineFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_vaccine, container, false);
 
-        cowinWebView = view.findViewById(R.id.webview_cowin);
+        btnVaccine = view.findViewById(R.id.btn_register_vaccine);
 
-        cowinWebView.requestFocus();
-        cowinWebView.getSettings().setLightTouchEnabled(true);
-        cowinWebView.getSettings().setJavaScriptEnabled(true);
-        cowinWebView.getSettings().setGeolocationEnabled(true);
-        cowinWebView.setSoundEffectsEnabled(true);
-
-//        cowinWebView.loadUrl("https://selfregistration.cowin.gov.in/");
-        cowinWebView.loadUrl("https://www.youtube.com/watch?v = atnyX5yjLj0");
-        cowinWebView.setWebChromeClient(new WebChromeClient() {
-            public void onProgressChanged(WebView view, int progress) {
-                if (progress < 100) {
-//                    progressDialog.show();
-                }
-                if (progress == 100) {
-//                    progressDialog.dismiss();
-                }
+        btnVaccine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cowinIntent = new Intent();
+                cowinIntent.setAction(Intent.ACTION_VIEW);
+                cowinIntent.setData(Uri.parse("https://selfregistration.cowin.gov.in/"));
+                view.getContext().startActivity(cowinIntent);
             }
         });
+
+
 
         return view;
     }
