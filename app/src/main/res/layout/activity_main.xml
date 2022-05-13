@@ -1,18 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.agastya.app.MainActivity">
 
     <TextView
+        android:id="@+id/tv_heading"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:text="Statistics"
+        android:textSize="32sp"
+        android:fontFamily="@font/tajawal_bold"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/btn_logout"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="16dp"
+        android:background="?actionBarItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/logout_variant" />
+
+    <FrameLayout
+        android:id="@+id/fragment_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_nav_layout"
+        android:layout_below="@id/tv_heading"/>
+
+    <LinearLayout
+        android:id="@+id/bottom_nav_layout"
+        android:padding="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?actionBarItemBackground"
+            android:id="@+id/nav_item_stats"
+            android:onClick="onClickNavItem"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/stats_outline"/>
+
+        <ImageView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?actionBarItemBackground"
+            android:id="@+id/nav_item_news"
+            android:onClick="onClickNavItem"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/info_outline"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?actionBarItemBackground"
+            android:id="@+id/nav_item_res"
+            android:onClick="onClickNavItem"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/phone_outline"/>
+
+        <ImageView
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?actionBarItemBackground"
+            android:id="@+id/nav_item_vaccine"
+            android:onClick="onClickNavItem"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/vaccine_outline"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:onClick="onClickNavItem"
+        android:id="@+id/nav_item_report"
+        app:cardElevation="3dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        app:strokeColor="#8EC2A0"
+        app:strokeWidth="2dp">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/agastya_icon"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:background="@drawable/nav_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_above="@id/bottom_nav_layout"/>
+
+</RelativeLayout>
