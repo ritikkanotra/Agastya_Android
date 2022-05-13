@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
+//    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,18 +19,12 @@ public class SplashActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-        mAuth = FirebaseAuth.getInstance();
+//        mAuth = FirebaseAuth.getInstance();
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
-                if (mAuth.getCurrentUser() == null) {
-                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-                }
-                else {
-                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                }
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 finish();
             }
         }, 500);
